@@ -1,0 +1,67 @@
+body {
+  font-family: Arial, sans-serif;
+  padding: 15px;
+  background: #141414;
+  color: white;
+}
+
+.container {
+  max-width: 800px;
+  margin: auto;
+}
+
+a {
+  color: #00c3ff;
+  text-decoration: none;
+}
+
+.actorImg {
+  width: 300px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+.loading {
+  color: #00c3ff;
+  font-weight: bold;
+}
+
+.error {
+  color: #ff4c4c;
+  font-weight: bold;
+}
+
+.actorDescription {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+#showsSection {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+}
+
+.actors-show-card {
+  border-radius: 10px;
+  background: #303030;
+  padding: 10px;
+  text-align: center;
+  width: 15%;
+  height: 60%;
+}
+
+.actors-show-card img {
+  height: 60%;
+  width: 100%;
+  border-radius: 10px;
+}
+
+.actors-show-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+  background: #46b9b169;
+}
