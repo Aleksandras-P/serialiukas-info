@@ -87,7 +87,7 @@ function startCarousel() {
     } else {
       i = 0;
     }
-  }, 2000);
+  }, 4000);
 }
 
 //ShowsLoader
