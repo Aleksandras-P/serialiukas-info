@@ -10,18 +10,21 @@ const adsDataBase = [
   {
     id: 1,
     name: "Vilnius Coding School",
+    text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa tenetur ipsum sint quae facilis temporibus dicta voluptatibus, et, fuga culpa porro delectus? Aperiam harum quibusdam illo nam sint quae dicta.",
     image: "/imgs/vilniusCoding.jpg",
     href: "https://www.vilniuscoding.lt",
   },
   {
     id: 2,
     name: "Amazon",
+    text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa tenetur ipsum sint quae facilis temporibus dicta voluptatibus, et, fuga culpa porro delectus? Aperiam harum quibusdam illo nam sint quae dicta.",
     image: "/imgs/amazon.jpg",
     href: "https://www.amazon.com",
   },
   {
     id: 3,
-    name: "Vilnius Coding School",
+    name: "Netflix",
+    text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa tenetur ipsum sint quae facilis temporibus dicta voluptatibus, et, fuga culpa porro delectus? Aperiam harum quibusdam illo nam sint quae dicta.",
     image: "/imgs/netflix.jpg",
     href: "https://www.netflix.com",
   },
@@ -55,6 +58,10 @@ function loadAds() {
       });
     } else {
       div.style.background = `${backgroundShadow}, url("${ad.image}")`;
+      div.innerHTML = `
+      <h2>${ad.name}</h2>
+      <p>${ad.text}</p> 
+      `;
       div.addEventListener("click", () => {
         window.open(ad.href, "_blank").focus();
       });
@@ -94,17 +101,18 @@ function getAllShows() {
     })
     .then((data) => {
       console.log(data);
-      statusText.textContent = `Uzkrauta ${data.length} filmu`;
+      statusText.textContent = `Užkrauta ${data.length} serialų`;
       renderPages(data);
     })
     .catch((error) => {
       console.log(error);
-      statusText.textContent = "Atsiprasome ivyko klaida";
+      statusText.textContent =
+        "Atsiprašome įvyko klaida, mėginkite dar kartą vėliau...";
     });
 }
 
 function searchShowsByName(value) {
-  statusText.textContent = "Ieskoma...";
+  statusText.textContent = "Ieškoma...";
   resultsDiv.innerHTML = "";
   fetch(searchShows + value)
     .then((response) => {
@@ -113,9 +121,9 @@ function searchShowsByName(value) {
     .then((data) => {
       const shows = data.map((item) => item.show);
 
-      statusText.textContent = `Uzkrauta ${data.length} filmu`;
-      shows.forEach(() => {
-        renderPages(data);
+      statusText.textContent = `Surasta ${data.length} serialų`;
+      shows.forEach((show) => {
+        renderShows(show);
       });
     })
     .catch((error) => {
@@ -140,7 +148,7 @@ function renderShows(show) {
   div.className = "card";
 
   div.innerHTML = `
-        <img src="${show.image.medium}" alt="nuotrauka">
+        ${show.image && show.image.medium ? `<img src="${show.image.medium}" alt="nuotrauka">` : ""}
         <h3>${show.name}</h3>
         <p>${ratingResult}</p>
         `;
@@ -190,12 +198,20 @@ function renderPages(shows) {
 
 function createPaginationButton(text) {
   const btn = document.createElement("button");
+  btn.className = "pageBtn";
   btn.innerText = text;
   btn.value = text;
 
+  if (text === 1) {
+    btn.disabled = true;
+  }
+
   btn.addEventListener("click", () => {
+    document.querySelectorAll(".pageBtn").forEach((btn) => {
+      btn.disabled = false;
+    });
     page = btn.value;
-    btn.className = "selected";
+    btn.disabled = true;
     getAllShows();
   });
 

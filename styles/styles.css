@@ -1,9 +1,13 @@
 body {
-  font-family: Arial, sans-serif;
+  font-family: "Kodchasan", sans-serif;
   padding: 0px;
   background: #141414;
   color: white;
   margin: 0px;
+}
+
+.burger-icon {
+  display: none;
 }
 
 input {
@@ -97,6 +101,8 @@ nav a {
 }
 
 .logo span {
+  font-family: "Bagel Fat One", sans-serif;
+  font-weight: 100;
   font-size: 36px;
   color: #46b9b1c3;
 }
@@ -157,13 +163,13 @@ footer ul {
 }
 
 .adsContainer {
-  width: 50%;
+  width: 55%;
   margin: 20px auto;
 }
 
 #ads {
   margin-top: 20px;
-  height: 450px;
+  height: 400px;
   width: 100%;
   background: #14141460;
   border-radius: 10px;
@@ -172,15 +178,16 @@ footer ul {
   flex-wrap: nowrap;
   overflow: hidden;
 }
-
+.ad-card-img {
+}
 .ad-card {
   position: relative;
   min-width: 100%;
-  height: 100%;
+  min-height: 100%;
   transition: all 0.5s linear;
   background-repeat: no-repeat;
-  background-size: contain;
-  background-position: bottom;
+  background-size: cover;
+  background-position: center;
   text-align: center;
   display: flex;
   flex-direction: column;
@@ -247,7 +254,7 @@ footer ul {
   margin-top: 30px;
 }
 
-.pagination button {
+.pageBtn {
   padding: 8px 14px;
   font-size: 15px;
   border: none;
@@ -257,12 +264,96 @@ footer ul {
   transition: background-color 0.3s ease;
 }
 
-.pagination button:hover {
-  background-color: #dcdcdc;
+.pageBtn:hover {
+  background-color: #46b9b19c;
 }
 
-.selected {
-  background-color: #007bff;
+.pageBtn:disabled {
+  background-color: #46b9b155;
   color: white;
   font-weight: bold;
+  cursor: default;
+}
+
+@media (max-width: 768px) {
+  .nav-menu {
+    display: none;
+  }
+
+  .burger-icon {
+    display: block;
+  }
+
+  hero {
+    text-align: center;
+    width: 100%;
+  }
+
+  input {
+    width: 100%;
+  }
+
+  .adsContainer {
+    width: 100%;
+  }
+
+  .ad-card h2 {
+    font-size: 36px;
+  }
+
+  .adsBtn {
+    width: 80%;
+    font-size: 20px;
+    font-weight: 400;
+  }
+
+  footer nav {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  footer ul {
+    align-items: center;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  nav {
+    flex-direction: column;
+    font-size: 20px;
+  }
+
+  input {
+    width: 60%;
+  }
+
+  ul li a {
+    font-size: 15px;
+    padding: 5px;
+  }
+
+  .adsContainer {
+    width: 90%;
+  }
+
+  .ad-card h2 {
+    font-size: 36px;
+  }
+
+  .adsBtn {
+    width: 80%;
+    font-size: 20px;
+    font-weight: 400;
+  }
+
+  footer nav {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  footer ul {
+    align-items: center;
+  }
 }

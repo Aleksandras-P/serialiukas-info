@@ -1,5 +1,5 @@
 body {
-  font-family: Arial, sans-serif;
+  font-family: "Kodchasan", sans-serif;
   padding: 40px;
   background: #141414;
   color: white;
@@ -14,6 +14,7 @@ body {
   width: 300px;
   border-radius: 10px;
   margin-bottom: 20px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
 }
 
 .castCard {
@@ -53,13 +54,6 @@ a {
   text-decoration: none;
 }
 
-#cast {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
-  gap: 20px;
-}
-
 #details {
   padding: 15px;
   background-color: #46b9b180;
@@ -67,11 +61,11 @@ a {
   margin-top: 20px;
 }
 
-#details img {
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
-}
-
 #cast {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  gap: 20px;
   background: #a0a0a012;
   padding: 15px;
   border-radius: 10px;

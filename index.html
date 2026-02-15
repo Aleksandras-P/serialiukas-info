@@ -4,6 +4,12 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Shows</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bagel+Fat+One&family=Kodchasan:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="/styles/styles.css" />
     <script src="/scripts/script.js" defer></script>
   </head>
@@ -13,7 +19,7 @@
         <div class="logo">
           <a href=""><span>Serial</span>iukas.<span>info</span></a>
         </div>
-        <ul>
+        <ul class="nav-menu">
           <li>
             <select id="showCategories">
               <option value="">Kategorijos</option>
@@ -23,13 +29,16 @@
           <li><a href="">Paremti projektą</a></li>
           <li><a href="">Mūsų partneriai ir remėjai</a></li>
         </ul>
+        <div class="burger-icon">
+          <img src="/imgs/burgerMenu.png" alt="burger menu icon" />
+        </div>
       </nav>
       <div class="adsContainer">
         <div id="ads"></div>
       </div>
     </header>
     <hero>
-      <h1>Serialu paieska</h1>
+      <h1>Serialų paieška</h1>
       <input
         type="text"
         id="searchInput"
@@ -45,7 +54,7 @@
         <div class="footer-logo">
           <a href=""><span>Serial</span>iukas.<span>info</span></a>
         </div>
-        <ul>
+        <ul class="footer-nav">
           <li><a href="">Rašyti el.laišką</a></li>
           <li><a href="">Paremti projektą</a></li>
           <li><a href="">Mūsų partneriai ir remėjai</a></li>

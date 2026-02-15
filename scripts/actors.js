@@ -42,7 +42,7 @@ function getActorDetails() {
             const showCard = document.createElement("div");
             showCard.className = "actors-show-card";
             showCard.innerHTML = `
-            ${showData.image || showData.image.medium ? `<img src="${showData.image.medium}" alt="nuotrauka" class="showImg">` : ""}
+            ${showData.image && showData.image.medium ? `<img src="${showData.image.medium}" alt="nuotrauka" class="showImg">` : ""}
             <h4>${shows._links.show.name}</h4>
             <p>${shows._links.character.name}</p>
 
